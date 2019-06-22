@@ -78,8 +78,10 @@ COPY --from=build /dump1090/faup1090 /usr/lib/piaware/helpers/
 # mlatclient bins
 COPY --from=build /usr/bin/fa-mlat-client /usr/bin/fa-mlat-client
 COPY --from=build /usr/bin/mlat-client /usr/bin/mlat-client
+RUN ln -s /usr/bin/fa-mlat-client /usr/lib/piaware/helpers/
 
 # mlatclient libs
+COPY --from=build /usr/lib/python3.7/site-packages/_modes* /usr/lib/python3.7/site-packages/
 COPY --from=build /usr/lib/python3.7/site-packages/mlat /usr/lib/python3.7/site-packages/mlat
 COPY --from=build /usr/lib/python3.7/site-packages/flightaware /usr/lib/python3.7/site-packages/flightaware
 
