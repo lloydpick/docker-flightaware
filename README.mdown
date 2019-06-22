@@ -1,0 +1,23 @@
+# Docker FlightAware
+
+Docker container for [FlightAware PiAware](https://flightaware.com/adsb/piaware/), with support for arm, arm64 and amd64.
+
+[![](https://images.microbadger.com/badges/version/lloydpick/flightaware.svg)](https://microbadger.com/images/lloydpick/flightaware) [![](https://images.microbadger.com/badges/image/lloydpick/flightaware.svg)](https://microbadger.com/images/lloydpick/flightaware) https://hub.docker.com/r/lloydpick/flightaware
+
+## Summary
+
+The container provides you with the FlightAware PiAware application.
+
+### Configuration
+
+All configuration for this Docker container is done via environmental variables with sane defaults. To change a setting, simply set the appropriate environment variable.
+
+| Environment Variable  | Default Value | Notes |
+|:---------------------:|:-------------:|:------|
+|`DUMP1090_SERVER`      |`dump1090`     |Server that dump1090 is running on|
+|`DUMP1090_PORT`        |`30005`        |Port that dump1090 is running on|
+|`FLIGHTAWARE_FEEDER_ID`|               |Your feeder ID for FlightAware|
+
+### Rebuilding
+
+If you wish to rebuild this image for yourself, you can use the [Dockerfile](https://github.com/lloydpick/docker-flightaware/blob/master/Dockerfile) provided. However, the image that exists on DockerHub was built using the Docker experimental `buildx` functionality to build the `arm32` version from a Mac. You can view the build command in the [Makefile](https://github.com/lloydpick/docker-flightaware/blob/master/Makefile).
