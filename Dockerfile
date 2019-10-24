@@ -10,9 +10,9 @@ FROM base as build
 RUN apk add --no-cache libusb-dev ncurses-dev git build-base
 RUN apk add --no-cache tcl-dev autoconf python3-dev curl librtlsdr-dev@testing
 
-ARG TCLLAUNCHER_VERSION=v1.8
-ARG PIAWARE_VERSION=v3.7.1
-ARG DUMP1090_VERSION=v3.7.1
+ARG TCLLAUNCHER_VERSION=v1.10
+ARG PIAWARE_VERSION=v3.7.2
+ARG DUMP1090_VERSION=v3.7.2
 ARG MLATCLIENT_VERSION=v0.2.10
 
 RUN mkdir /tcllauncher
@@ -56,7 +56,7 @@ FROM base
 
 # tcllauncher
 COPY --from=build /usr/bin/tcllauncher /usr/bin/tcllauncher
-COPY --from=build /usr/lib/Tcllauncher1.8 /usr/lib/Tcllauncher1.8
+COPY --from=build /usr/lib/Tcllauncher1.10 /usr/lib/Tcllauncher1.10
 
 # piaware bins
 COPY --from=build /usr/bin/piaware-config /usr/bin/piaware-config
