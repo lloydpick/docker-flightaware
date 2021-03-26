@@ -1,4 +1,4 @@
-FROM alpine:3.10 as base
+FROM alpine:3.13.3 as base
 
 RUN echo '@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories
 RUN apk add --no-cache libusb ncurses-libs python3 tcl tcllib tclx tcl-tls \
